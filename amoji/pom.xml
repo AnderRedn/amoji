@@ -103,6 +103,6 @@
 		<finalName>gestionamoji</finalName>
 	</build>
 	<properties>
-		<springversion>4.3.17.RELEASE</springversion>
+		<springversion>4.3.18.RELEASE</springversion>
 	</properties>
 </project>

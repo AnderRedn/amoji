@@ -49,8 +49,8 @@ public class JDBCEmojiDAO extends JdbcDaoSupport implements IEmojiDAO {
 
 	@Override
 	public void updateEmoji(Emoji e) {
-		String sql = "update emoticon set idEmoticon=?,nameEmoticon=?,emoticon=?,idType=? where idEmoticon=?";
-		getJdbcTemplate().update(sql, e.getIdEmoticon(), e.getName(), e.getEmoticon(), e.getIdType(), e.getIdEmoticon());
+		String sql = "update emoticon set name=?,emoticon=?,idType=? where idEmoticon=?";
+		getJdbcTemplate().update(sql, e.getName(), e.getEmoticon(), e.getIdType(), e.getIdEmoticon());
 	}
 
 	@Override

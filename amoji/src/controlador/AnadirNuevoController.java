@@ -1,16 +1,13 @@
 package controlador;
 
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 import modelo.EType;
 import modelo.Emoji;
@@ -32,12 +29,9 @@ public class AnadirNuevoController {
 	public String mostrarFormAnadirNuevo(Model model) {
 		Emoji e = new Emoji();
         model.addAttribute("emoji", e);
+        EType et = new EType();
+        model.addAttribute("eType", et);
         return "AnadirNuevo";
-
-    
-		/*List<Emoji> lista = emojiBL.listEmojis();
-		List<EType> listaType = typeBL.listEType();
-		return new ModelAndView("ListEmojis", "listado", lista);*/
 	}
 	
 	@ModelAttribute("listaType")
@@ -47,8 +41,14 @@ public class AnadirNuevoController {
     }
 	
 	 @RequestMapping(method = RequestMethod.POST)    
-	public String saveEmoticon(@ModelAttribute("emp") Emoji e){    
-        emojiBL.createEmoji(e);    
+	public String saveEmoticon(@ModelAttribute("emoji") Emoji e, @ModelAttribute("eType") EType et){
+		if (e.getEmoticon()!=null) {
+			emojiBL.createEmoji(e);   
+		}
+		if (et.getNameType()!=null) {
+			typeBL.createEType(et);   
+		}
+         
         return "redirect:/listemojis.htm";//  
     }    
 }

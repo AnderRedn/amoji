@@ -27,7 +27,7 @@
 			<div id="idLinks">
 				<ul>
 					<li><a href="listemojis.htm">Gestionar Emoticonos</a></li>
-					<li><a href="AsciiTitle.htm">Convertir texto a arte Ascii</a></li>
+					<li><a href="asciititle.htm">Convertir texto a arte Ascii</a></li>
 				</ul>
 			</div>
 		</div>

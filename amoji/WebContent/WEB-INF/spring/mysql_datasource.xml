@@ -5,7 +5,7 @@
 
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="url" value="jdbc:mysql://localhost:3306/amoji?serverTimezone=UTC"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/amoji?serverTimezone=UTC&amp;useEncoding=true&amp;characterEncoding=UTF-8"></property>
 		<property name="username" value="u_amoji"></property>
 		<property name="password" value="p_amoji"></property>
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
