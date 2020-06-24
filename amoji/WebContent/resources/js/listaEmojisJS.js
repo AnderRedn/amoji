@@ -1,5 +1,7 @@
 $(function() {
 	$('.btnAdd').tooltip({title: "Añadir nuevo", trigger: "hover"});
+	$('.btnModify').tooltip({title: "Modificar", trigger: "hover"});
+	$('.btnDelete').tooltip({title: "Borrar", trigger: "hover"});
 	$('.btnUndo').tooltip({title: "Resetear", trigger: "hover"});
 	$("[data-toggle='tooltip']").tooltip({title: "Copiado!", trigger: "click"})
 	$("[data-toggle='tooltip']").click(function(){

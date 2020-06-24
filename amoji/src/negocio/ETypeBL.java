@@ -14,7 +14,7 @@ public class ETypeBL {
 	@Autowired
 	JDBCETypeDAO dao;
 	
-	public void createEmoji(EType t){
+	public void createEType(EType t){
 		dao.createEType(t);
 	}
 	

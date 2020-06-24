@@ -12,11 +12,11 @@
 	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
 	crossorigin="anonymous">
 <link
-	href="${pageContext.request.contextPath}/resources/css/anadirNuevoStyle.css"
+	href="${pageContext.request.contextPath}/resources/css/actualizarEmoticonoStyle.css"
 	rel="stylesheet">
 <!--script src="${pageContext.request.contextPath}/resources/js/sample.js"></script-->
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Añadir nuevo</title>
+<title>Actualizar emoji</title>
 </head>
 <body>
 	<div class="container-fluid">
@@ -26,12 +26,12 @@
 					src="${pageContext.request.contextPath}/resources/images/aaamoji.png"
 					alt="Amoji web icon" width="390" height="110">
 
-				<h3>Añadir nuevo ...</h3>
+				<h3>Actualizar Emoticono</h3>
 				<a href="listemojis.htm" id="idBtnVolver">Volver</a>
 			</div>
 			<div class="justify-content-center">
-			<h4>Emoticono</h4>
-				<form:form cssClass="form" modelAttribute="emoji">
+				<h4>Emoticono</h4>
+				<form:form cssClass="form" modelAttribute="emojiUpd">
 					<form:label cssClass="label" path="name">Nombre: </form:label>
 					<form:input cssClass="input" path="name" required="required" />
 					<br>
@@ -46,17 +46,8 @@
 							itemLabel="nameType" />
 					</form:select>
 					<br><br>
-					<button type="submit" class="btn btn-light">Añadir</button>
+					<button type="submit" class="btn btn-light">Actualizar</button>
 				</form:form>
-				<br><hr><br>
-				<h4>Tipo</h4>
-				<form:form modelAttribute="eType">
-					<form:label cssClass="label" path="nameType">Nombre: </form:label>
-					<form:input cssClass="input" path="nameType" required="required" />
-					<br><br>
-					<button type="submit" class="btn btn-light">Añadir</button>
-				</form:form>
-				
 			</div>
 		</div>
 	</div>
