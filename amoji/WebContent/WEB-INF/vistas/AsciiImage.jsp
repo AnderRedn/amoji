@@ -8,9 +8,9 @@
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
 	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-<link href="${pageContext.request.contextPath}/resources/css/asciiTitleStyle.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/resources/css/asciiImageStyle.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/asciiTitleJS.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/asciiImageJS.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Arte Ascii</title>
 </head>
@@ -22,26 +22,19 @@
 				<h3>Conversor Ascii</h3>
 				<a href="menu.htm" id="idBtnVolver">Volver</a>
 			</div>
-			<div class="d-flex flex-column">
-				<div id="idInput" class="justify-content-center">
-					<form:form action="/amoji/getasciititle.htm" method="get" modelAttribute="textAscii">
-						<form:label cssClass="label" path="inputText">Texto: </form:label>
-						<form:input cssClass="input" path="inputText" required="required" />
-						<br>
-						<br>
-						<form:label cssClass="label" path="inputStyle">Estilo: </form:label>
-						<form:select multiple="single" path="inputStyle">
-							<form:option disabled="true" value="0" selected="true">Por defecto</form:option>
-							<form:options items="${listaEstilos}" />
-						</form:select>
-						<br>
-						<br>
-						<button type="submit" class="btn btn-light">Convertir</button>
-					</form:form>
+			<div class="d-flex flex-column text-center">
+				<div>
+					<p>
+						<input type="file" name="picture" />
+					</p>
 				</div>
-				<div class="d-flex justify-content-center" data-toggle="tooltip">
-					<!--iframe src="${textGET}"></iframe-->
-					<pre id="idPre" class="text-center"><c:out value="${textPlain}" /></pre>
+				<div class="d-flex flex-column justify-content-center">
+					<div>
+						<canvas id="preview" style="display: none;"></canvas>
+					</div>
+					<div class="d-flex justify-content-center" data-toggle="tooltip">
+						<pre class="text-center" id="ascii"></pre>
+					</div>
 				</div>
 			</div>
 		</div>

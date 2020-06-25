@@ -6,6 +6,20 @@ body {
 	margin:2%;
 }
 
+p a{
+	text-decoration: none;
+	color: black;
+}
+
+p a:link, p a:visited, p a:active {
+	background-color: #ffffff;
+	color:black;
+}
+p a:hover{
+	background-color: #ffffff;
+	color:red;
+}
+
 ul {
 	list-style-type: none;
 	margin: 0;
