@@ -1,0 +1,73 @@
+body {
+	font-family: "Lucida Console", Monaco, monospace;
+}
+
+#idAmoji{
+	margin: 1%;
+}
+
+#idInput {
+	margin: auto;
+	padding: 10px;
+}
+
+#idBtnVolver {
+	display: inline-block;
+	width: auto;
+	color: black;
+	padding: 5px 15px;
+	text-align: center;
+	transition: background-color 0.5s;
+}
+
+.vertical-center {
+	min-height: 100%;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+}
+
+.label {
+	display: inline-block;
+	width: 90px;
+	margin: 5px;
+}
+
+.input {
+	width: 300px;
+	box-sizing: border-box;
+	padding-left: 10px;
+}
+
+pre {
+	/*display: block;
+    font-family: monospace;
+    white-space: pre;*/
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	font: inherit;
+	font-family: monospace;
+	vertical-align: baseline;
+}
+
+#idBtnVolver:link, #idBtnVolver:visited {
+	background-color: #ededed;
+	text-decoration: none;
+}
+
+#idBtnVolver:hover, #idBtnVolver:active {
+	background-color: #004bcc;
+	color: white;
+}
+
+#idPre {
+	padding: 10px;
+}
+
+#idPre:hover, #idPre:active {
+	box-shadow: 0 0 11px rgba(33, 33, 33, .2);
+	cursor: pointer;
+}
