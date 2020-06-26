@@ -20,6 +20,7 @@
 			<div id="idAmoji" class="text-center">
 				<img src="${pageContext.request.contextPath}/resources/images/aaamoji.png" alt="Amoji web icon" width="390" height="110">
 				<h3>Conversor Ascii</h3>
+				<p id="idP">Se recomienda el uso de fuentes de la familia "monospace" al copiar</p>
 				<a href="menu.htm" id="idBtnVolver">Volver</a>
 			</div>
 			<div class="d-flex flex-column text-center">
