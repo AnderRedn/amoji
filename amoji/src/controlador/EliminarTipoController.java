@@ -8,35 +8,22 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import modelo.EType;
-import modelo.Emoji;
 import negocio.ETypeBL;
-import negocio.EmojiBL;
 
 @Controller
-@RequestMapping(value = "/ActualizarEmoticono.htm")
-public class ActualizarEmoticonoController {
-
-	@Autowired
-	EmojiBL emojiBL;
+public class EliminarTipoController {
 
 	@Autowired
 	ETypeBL typeBL;
 
-	@RequestMapping(method = RequestMethod.GET)
-	public String mostrarFormAnadirNuevo(Model model, int idEmoticon) {
-		Emoji e = new Emoji();
-		Emoji eget = emojiBL.getEmojiById(idEmoticon);
-		e.setEmoticon(eget.getEmoticon());
-		e.setIdEmoticon(eget.getIdEmoticon());
-		e.setName(eget.getName());
-		e.setIdType(eget.getIdType());
-		model.addAttribute("emojiUpd", e);
+	@RequestMapping(value = "/eliminartipo.htm", method = RequestMethod.GET)
+	public String mostrarFormEliminarTipo(Model model) {
 		EType et = new EType();
 		model.addAttribute("eType", et);
-		return "ActualizarEmoticono";
-
+		return "EliminarTipo";
 	}
 
 	@ModelAttribute("listaType")
@@ -46,8 +33,8 @@ public class ActualizarEmoticonoController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public String saveEmoticon(@ModelAttribute("emojiUpd") Emoji e) {
-		emojiBL.updateEmoji(e);
-		return "redirect:/listemojis.htm";//
+	public String eliminarTipo(@RequestParam("idType") int idType) {
+		typeBL.deleteEmoji(idType);
+		return "redirect:listemojis.htm";
 	}
 }

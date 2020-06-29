@@ -20,7 +20,7 @@ public class AsciiTitleController {
 	}
 	
 	@ModelAttribute("listaEstilos")
-    public String[] getExerciseList(){
+    public String[] getTypeList(){
 		RestTemplate restTemplate = new RestTemplate();
 		String result = restTemplate.getForObject("http://artii.herokuapp.com/fonts_list", String.class);
 		String[] types = result.split("\n");

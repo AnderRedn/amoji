@@ -12,10 +12,10 @@ import datos.IETypeDAO;
 import modelo.EType;
 
 @Repository
-public class JDBCETypeDAO extends JdbcDaoSupport implements IETypeDAO{
-	
+public class JDBCETypeDAO extends JdbcDaoSupport implements IETypeDAO {
+
 	private DataSource ds;
-	
+
 	@Autowired
 	public void setDs(DataSource ds) {
 		this.ds = ds;
@@ -32,6 +32,11 @@ public class JDBCETypeDAO extends JdbcDaoSupport implements IETypeDAO{
 	public List<EType> listEType() {
 		String sql = "select * from emoticon_type";
 		return getJdbcTemplate().query(sql, new ETypeRowMapper());
+	}
+
+	public void deleteEType(int idType) {
+		String sql = "delete from emoticon_type where idType=?";
+		getJdbcTemplate().update(sql, idType);
 	}
 
 }

@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class AsciiImageController {
 
 	@RequestMapping(value = "/asciiimage.htm", method = RequestMethod.GET)
-	public ModelAndView MostrarPage(ModelMap modelo){
+	public ModelAndView mostrarPage(ModelMap modelo){
 		return new ModelAndView("AsciiImage");
 	}
 }

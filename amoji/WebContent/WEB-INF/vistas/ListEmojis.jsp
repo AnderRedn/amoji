@@ -33,8 +33,10 @@
 							</a>
 						</div>
 						<form:form method="GET" action="listaType.htm" modelAttribute="myEType">
+						<a id="idBtnDltType" class="btn btnDltType btn-light" href="eliminartipo.htm"> <i class="fa fa-minus" aria-hidden="true"></i>
+							</a>
 							<form:select multiple="single" path="idType" required="true">
-								<form:option disabled="true" value="0"> --SELECT--</form:option>
+								<form:option disabled="true" value="0">--SELECT--</form:option>
 								<form:options items="${listaType}" itemValue="idType" itemLabel="nameType" />
 							</form:select>
 							<button type="submit" class="btn btn-light">Filtrar</button>
