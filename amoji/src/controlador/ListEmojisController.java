@@ -20,57 +20,41 @@ public class ListEmojisController {
 
 	@Autowired
 	EmojiBL emojiBL;
-	
+
 	@Autowired
 	ETypeBL typeBL;
 
-	@RequestMapping(value = "/listemojis.htm", method=RequestMethod.GET)
+	@RequestMapping(value = "/listemojis.htm", method = RequestMethod.GET)
 	public String listEmojis(Model model) {
-		EType e =new EType();
+		EType e = new EType();
 		List<Emoji> lista = emojiBL.listEmojis();
-        model.addAttribute("listado", lista);
-        
-        model.addAttribute("myEType", e);
-        return "ListEmojis";
+		model.addAttribute("listado", lista);
 
-    
-		/*List<Emoji> lista = emojiBL.listEmojis();
-		List<EType> listaType = typeBL.listEType();
-		return new ModelAndView("ListEmojis", "listado", lista);*/
+		model.addAttribute("myEType", e);
+		return "ListEmojis";
+
 	}
-	
+
 	@ModelAttribute("listaType")
-    public List<EType> getExerciseList(){
+	public List<EType> getTypeList() {
 		List<EType> listaType = typeBL.listEType();
-        return listaType;
-    }
-	
-	/*@RequestMapping(method=RequestMethod.POST)
-	public String sortByType(@ModelAttribute("listaType") EType eType, Model model){
-	    //dogFromForm.getBreed() will give you the selected breed from the <form:select
-		List<Emoji> lista = emojiBL.getEmojisByType(eType.getIdType());
-		List<EType> listaType = typeBL.listEType();
-		model.addAttribute("listaType", listaType);
-        model.addAttribute("listado", lista);
-        model.addAttribute("myEType", new EType());
-        return "redirect:listemojis.htm";
-	}*/
-	
-	@RequestMapping(value = "/listaType.htm", method=RequestMethod.GET)
-    public String listaType(@RequestParam("idType") int idType, Model model) {
+		return listaType;
+	}
+
+	@RequestMapping(value = "/listaType.htm", method = RequestMethod.GET)
+	public String listaType(@RequestParam("idType") int idType, Model model) {
 		List<Emoji> lista = emojiBL.getEmojisByType(idType);
-        model.addAttribute("listado", lista);
-        EType e =new EType();
-        
-        model.addAttribute("myEType", e);
-        return "ListEmojis";
-    }
-	
-	// /EliminarProyecto.htm?id=4
-		@RequestMapping(value="/EliminarEmoticono.htm")
-		public String eliminarProyecto(@RequestParam("idEmoticon") int idEmoticon){
-			emojiBL.deleteEmoji(idEmoticon);
-			return "redirect:listemojis.htm";
-		}
+		model.addAttribute("listado", lista);
+		EType e = new EType();
+
+		model.addAttribute("myEType", e);
+		return "ListEmojis";
+	}
+
+	@RequestMapping(value = "/EliminarEmoticono.htm")
+	public String eliminarEmoticono(@RequestParam("idEmoticon") int idEmoticon) {
+		emojiBL.deleteEmoji(idEmoticon);
+		return "redirect:listemojis.htm";
+	}
 
 }

@@ -35,7 +35,7 @@ public class AnadirNuevoController {
 	}
 	
 	@ModelAttribute("listaType")
-    public List<EType> getExerciseList(){
+    public List<EType> getTypeList(){
 		List<EType> listaType = typeBL.listEType();
         return listaType;
     }

@@ -21,4 +21,8 @@ public class ETypeBL {
 	public List<EType> listEType(){
 		return dao.listEType();
 	}
+
+	public void deleteEmoji(int idType) {
+		dao.deleteEType(idType);
+	}
 }
