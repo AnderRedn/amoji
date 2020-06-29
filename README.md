@@ -20,7 +20,7 @@ La configuracion por defecto de amoji:
 - La BBDD utilizada es: **MySQL**
 - El nombre de la BBDD es: **amoji**
 - El usuario utilizado para hacer las conexiones a la BD es: **u_amoji**
-- y su contraseña es: **p_amoji**
+- Su contraseña es: **p_amoji**
 
 En caso de querer utilizar otra configuracion, cambiar los parámetros en el archivo:
 - amoji/amoji/WebContent/WEB-INF/spring/**mysql_datasource.xml**
