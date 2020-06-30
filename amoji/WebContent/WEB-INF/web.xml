@@ -15,19 +15,6 @@
 			<param-value>true</param-value>
 		</init-param>
 	</filter>
-	<filter>
-		<filter-name>CorsFilter</filter-name>
-		<filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>CorsFilter</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
-
-	<filter-mapping>
-		<filter-name>encodingFilter</filter-name>
-		<url-pattern>*.htm</url-pattern>
-	</filter-mapping>
 
 	<servlet>
 		<servlet-name>spring-servlet</servlet-name>

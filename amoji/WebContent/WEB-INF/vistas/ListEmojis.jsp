@@ -18,12 +18,10 @@
 <body>
 	<div class="container-fluid">
 		<div id="idContent" class="d-flex text-center justify-content-center">
-			<!-- style="outline: 1px black solid" -->
 			<div id="idTable">
 				<div id="idHead">
 					<div id="idAmoji" class="text-center">
 						<img src="${pageContext.request.contextPath}/resources/images/aaamoji.png" alt="Amoji web icon" width="390" height="110">
-
 						<h3>Lista de Emoticonos</h3>
 						<a href="menu.htm" id="idBtnVolver">Volver</a>
 					</div>
