@@ -41,7 +41,6 @@
 					</form:form>
 				</div>
 				<div class="d-flex justify-content-center" data-toggle="tooltip">
-					<!--iframe src="${textGET}"></iframe-->
 					<pre id="idPre" class="text-center"><c:out value="${textPlain}" /></pre>
 				</div>
 			</div>
